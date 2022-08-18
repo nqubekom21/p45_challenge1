@@ -9,6 +9,6 @@ input.times do
         end
         array.push(number)
     end
-    puts "#{array.join(' ')} bonus: #{rand(1..20)}"
+    puts "#{array.join(" ")} bonus: #{rand(1..20)}"
     array.clear
 end
