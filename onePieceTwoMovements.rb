@@ -1,4 +1,4 @@
-@array = Array.new(10){Array.new(10){0}}
+@pieces = Array.new(10){Array.new(10){0}}
 
 col_label = ["A","B","C","D","E","F","G","H","I","J"]
 
@@ -8,13 +8,13 @@ for i in 0..9
 
     for j in 0..9
 
-        @array[i][j] = "#{col_label[j]}#{row_label[i]}"
+        @pieces[i][j] = "#{col_label[j]}#{row_label[i]}"
 
     end
 
 end
 
-@array.each{|row|
+@pieces.each{|row|
 
     puts row.join(" ")
 
@@ -22,7 +22,7 @@ end
 
 public
 
-def coordinates(element)
+def coordinates(element) #return the piece's current\initial coordinates
 
     each_with_index do |subarray, i|
 
@@ -34,7 +34,7 @@ def coordinates(element)
 
 end
 
-def movePiece(currentCoords, horizontal, vertical)
+def movePiece(currentCoords, horizontal, vertical) #moves the piece and returns final coordinates
 
     if horizontal[1] == "R"
 
@@ -60,7 +60,7 @@ def movePiece(currentCoords, horizontal, vertical)
 
 end
 
-def movePhantom(currentCoords, horizontal, vertical)
+def movePhantom(currentCoords, horizontal, vertical) #moves the phantom and return final coordinates
 
     if horizontal[1] == "R"
 
@@ -87,9 +87,9 @@ def movePhantom(currentCoords, horizontal, vertical)
 
 end
 
-def getPiece(newCords)
+def getPiece(newCords) #return the piece in the given coordinates
 
-    return @array[newCords[0]][newCords[1]]
+    return @pieces[newCords[0]][newCords[1]]
 
 end
 
@@ -103,11 +103,11 @@ lr = input[3..4]
 
 ud = input[6..7]
 
-startCoordinates = @array.coordinates(initialPoint)
+startCoordinates = @pieces.coordinates(initialPoint) 
 
-newCoordinates = movePiece(startCoordinates, lr, ud)
+newCoordinates = movePiece(startCoordinates, lr, ud) 
 
-piece = getPiece(newCoordinates)
+piece = getPiece(newCoordinates) 
 
 phantomCoordinates = movePhantom(newCoordinates, lr, ud)
 
