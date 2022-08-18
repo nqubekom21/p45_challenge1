@@ -34,8 +34,6 @@ def coordinates(element)
 
 end
 
-
-
 def movePiece(currentCoords, horizontal, vertical)
 
     if horizontal[1] == "R"
@@ -47,8 +45,6 @@ def movePiece(currentCoords, horizontal, vertical)
         currentCoords[1] -= horizontal[0].to_i
 
     end
-
-    
 
     if vertical[1] == "D"
 
@@ -62,11 +58,7 @@ def movePiece(currentCoords, horizontal, vertical)
 
     return currentCoords
 
-    
-
 end
-
-
 
 def movePhantom(currentCoords, horizontal, vertical)
 
@@ -80,7 +72,6 @@ def movePhantom(currentCoords, horizontal, vertical)
 
     end
 
-    
 
     if vertical[1] == "D"
 
@@ -94,11 +85,7 @@ def movePhantom(currentCoords, horizontal, vertical)
 
     return currentCoords
 
-    
-
 end
-
-
 
 def getPiece(newCords)
 
@@ -106,19 +93,9 @@ def getPiece(newCords)
 
 end
 
-
-
-
-
-
-
 puts "Enter an input: "
 
-
-
 input = gets.chomp.strip
-
-
 
 initialPoint = input[0..1]
 
@@ -126,26 +103,14 @@ lr = input[3..4]
 
 ud = input[6..7]
 
-
-
 startCoordinates = @array.coordinates(initialPoint)
-
-
 
 newCoordinates = movePiece(startCoordinates, lr, ud)
 
-
-
-
-
 piece = getPiece(newCoordinates)
-
-
 
 phantomCoordinates = movePhantom(newCoordinates, lr, ud)
 
 phantom = getPiece(phantomCoordinates)
-
-
 
 puts "piece: #{piece}, phantom piece: #{phantom}"
