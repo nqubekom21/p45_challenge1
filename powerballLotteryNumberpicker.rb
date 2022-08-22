@@ -10,4 +10,4 @@ input = gets.strip.chomp.to_i # number of lines
 
 input.times {
     lotteryPowerball
-}def lotteryPowerball
+}
