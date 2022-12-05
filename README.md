@@ -12,7 +12,7 @@ Eg. Input: “E4 3R 2D”
 Output: piece: H2, phantom piece: B6
 
 
-LotteryPowerball:
+PowerballLotteryNumberpicker:
 ● Creates a powerball lottery number picker.
 ● Each lottery line has have 5 different numbers [between 1 and 50] and a bonus
 number [between 1 and 20] (ie. 8 15 16 23 42 bonus: 4)
